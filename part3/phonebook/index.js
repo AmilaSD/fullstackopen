@@ -46,9 +46,9 @@ app.get('/info', (request, response, next) => {
 /**
  * Retrieve all persons
  */
-app.get('/api/persons', (request, responsse, next) => {
-  Person.find({}).then((persons) => {
-    responsse.json(persons)
+app.get('/api/persons', (request, response, next) => {
+  Person.find({}).then((data) => {
+    response.json(data)
   }).catch((error) => next(error))
 })
 
