@@ -2,9 +2,9 @@ const express = require("express");
 var morgan = require('morgan')
 const cors = require('cors')
 const app = express();
-
 app.use(cors())
 app.use(express.json());
+app.use(express.static('dist'))
 
 morgan.token('postData', (req) => {
   return req.method === 'POST' ? JSON.stringify(req.body) : '';
@@ -36,6 +36,7 @@ let data = [
     number: "39-23-6423122",
   },
 ];
+
 
 app.get('/api/persons', (request, responsse) => {
     responsse.json(data)
