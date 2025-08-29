@@ -2,9 +2,9 @@ require('dotenv').config()
 const express = require('express')
 var morgan = require('morgan')
 const cors = require('cors')
+const Person = require('./models/person')
 
 const app = express()
-const Person = require('./models/person')
 
 app.use(cors())
 app.use(express.json())
